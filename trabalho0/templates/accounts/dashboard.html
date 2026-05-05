@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h1>Dashboard</h1>
+<p style="text-align:center; color:#555; margin: 1rem 0;">
+    Bem-vindo, <strong>{{ user.name }}</strong>!<br>
+    <small style="color:#999;">{{ user.email }}</small>
+</p>
+<p style="text-align:center; color:#777; font-size:0.9rem; margin-bottom: 1.5rem;">
+    Membro desde: {{ user.date_joined|date:"d/m/Y" }}
+</p>
+<a href="{% url 'logout' %}">
+    <button class="btn btn-danger">Sair</button>
+</a>
+{% endblock %}
